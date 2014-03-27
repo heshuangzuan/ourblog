@@ -66,7 +66,7 @@
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li><a href="index.html">主页</a></li>
-            <li><a href="index.html">文章管理</a></li>
+            <li><a href="<?php echo base_url();?>index.php/admin/articlewrite">文章管理</a></li>
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户管理</a>
@@ -75,11 +75,8 @@
             <li ><a href="user.html">个人信息</a></li>
             <li ><a href="reset-password.html">修改密码</a></li>
         </ul>
-        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+        <a href="<?php echo base_url();?>index.php/admin/help" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
         <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>关于我们</a>
-    </div>
-    <div class="content">
-    -----------------------------------------
     </div>
 </html>
 </body>

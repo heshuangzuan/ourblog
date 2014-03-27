@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Articlewrite extends CI_Controller {
+class help extends CI_Controller {
 	private $_data = array();
 	public function index()
 	{
 		/** set title */
-		$this->_data['page_title'] = '×«Ğ´ĞÂÎÄÕÂ';
-		$this->load->view('admin/write_post',$this->_data);
+		$this->_data['page_title'] = '°ïÖú';
+		$this->load->view('admin/help',$this->_data);
 	}
 }
 

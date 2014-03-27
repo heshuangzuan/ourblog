@@ -2,5 +2,5 @@
 $this->load->view('admin/header');
 ?>
     <div class="content">
-   ะดฮฤีย
+    ฐ๏ึ๚าณรๆ
     </div>
