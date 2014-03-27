@@ -17,8 +17,24 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
+  
+  <div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<form role="form">
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <button type="submit" class="btn btn-default">登录</button>
+		</form>
+	</div>
+  </div>
+	
+	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../assets/js/jquery-1.11.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
