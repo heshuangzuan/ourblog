@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 $this->load->view('admin/header');
 ?>
-    <div class="content">
-   文章管理
-    </div>
+  <div class="content">
+	<div class="row-fluid">
+   		文章管理
+	</div>
+  </div>

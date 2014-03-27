@@ -37,19 +37,16 @@
     <div class="navbar">
         <div class="navbar-inner">
                 <ul class="nav pull-right">
-                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
+                    <!--<li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>-->
                     <li id="fat-menu" class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> admin
-                            <i class="icon-caret-down"></i>
+                            <i class="icon-user"></i> admin <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#">我的账户</a></li>
-                            <!--<li class="divider"></li>
-                            <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li> -->
-                            <li class="divider visible-phone"></li>
-                            <li><a tabindex="-1" href="sign-in.html">退出</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="#">退出</a></li>
                         </ul>
                     </li>
 
@@ -77,6 +74,7 @@
             <li ><a href="user.html">个人信息</a></li>
             <li ><a href="reset-password.html">修改密码</a></li>
         </ul>
+        
         <a href="<?php echo base_url();?>index.php/admin/help" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
         <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>关于我们</a>
     </div>
