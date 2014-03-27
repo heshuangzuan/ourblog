@@ -76,7 +76,7 @@
             <li ><a href="reset-password.html">修改密码</a></li>
         </ul>
         <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
-        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>文章</a>
+        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>关于我们</a>
     </div>
     <div class="content">
     -----------------------------------------
