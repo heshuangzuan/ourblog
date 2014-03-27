@@ -2,7 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
         <title><?php echo $page_title?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
@@ -63,20 +63,20 @@
         </form>
         -->
 
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>鍚庡彴绠＄悊</a>
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="index.html">涓婚〉</a></li>
-            <li><a href="index.html">鏂囩珷绠＄悊</a></li>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="index.html">文章管理</a></li>
         </ul>
 
-        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>璐︽埛绠＄悊</a>
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户管理</a>
         <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="users.html">鐢ㄦ埛绠＄悊</a></li>
-            <li ><a href="user.html">涓汉淇℃伅</a></li>
-            <li ><a href="reset-password.html">淇敼瀵嗙爜</a></li>
+            <li ><a href="users.html">用户管理</a></li>
+            <li ><a href="user.html">个人信息</a></li>
+            <li ><a href="reset-password.html">修改密码</a></li>
         </ul>
-        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>甯姪</a>
-        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>鍏充簬鎴戜滑</a>
+        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+        <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>关于我们</a>
     </div>
     <div class="content">
     -----------------------------------------
