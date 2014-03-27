@@ -29,6 +29,7 @@
             font-weight: bold;
         }
     </style>
+     <link rel="shortcut icon" href="<?php echo base_url();?>/assets/ico/favicon.ico">
 </head>
 <body>
 <html>
@@ -66,7 +67,8 @@
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li><a href="index.html">主页</a></li>
-            <li><a href="<?php echo base_url();?>index.php/admin/articlewrite">文章管理</a></li>
+            <li class="<?php echo $article_active?>"><a href="<?php echo base_url();?>index.php/admin/article">文章管理</a></li>
+            <li class="<?php echo $article_write_active?>"><a href="<?php echo base_url();?>index.php/admin/article/write">写文章</a></li>
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户管理</a>
