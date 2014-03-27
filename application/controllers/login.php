@@ -7,9 +7,33 @@
 //
 class Login extends CI_Controller {
 
+    /**
+     * 构造函数
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->load->model('User_model', 'user');
+    }
+    
+    /**
+     * 默认执行函数
+     */
 	public function index()
 	{
-		$this->load->view('login');
+		// $data = array();
+// 		$data['name'] = 'zuanzuan';
+// 		$data['password'] = '123123';
+// 		$data['email'] = 'heshuangzuan@icloud.com';
+// 		echo $this->user->add_user($data);
+// 		
+// 		$data = $this->user->get_user_by_id(1);
+// 		var_dump($data);
+
+// 		echo $this->user->update_user(1, array('name' => 'papapa'));
+		
+// 		$this->load->view('login');
 	}
 }
 
