@@ -2,12 +2,10 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-        <title><?php echo $page_title?></title>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-theme.min.css" />
+    <meta charset="gbk">
+     <title><?php echo $page_title?></title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/stylesheets/theme.css" />  
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/stylesheets/font-awesome.css" />   
         <script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
@@ -29,27 +27,29 @@
             font-weight: bold;
         }
     </style>
-     <link rel="shortcut icon" href="<?php echo base_url();?>/assets/ico/favicon.ico">
+     <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.ico">
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
 <html>
     <div class="navbar">
         <div class="navbar-inner">
                 <ul class="nav pull-right">
-
                     <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
                     <li id="fat-menu" class="dropdown">
                         <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> Jack Smith
+                            <i class="icon-user"></i> admin
                             <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#">My Account</a></li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+                            <li><a tabindex="-1" href="#">我的账户</a></li>
+                            <!--<li class="divider"></li>
+                            <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li> -->
                             <li class="divider visible-phone"></li>
-                            <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                            <li><a tabindex="-1" href="sign-in.html">退出</a></li>
                         </ul>
                     </li>
 
