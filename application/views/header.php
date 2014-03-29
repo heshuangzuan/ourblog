@@ -6,7 +6,7 @@
                     <!--<li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> admin <b class="caret"></b>
+                            <i class="icon-user"></i> admin <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">

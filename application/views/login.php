@@ -18,9 +18,9 @@ $this->load->view('head');
             <div class="block-body">
                 <form action="article">
                     <label>用户名</label>
-                    <input id="username" type="text" class="span12" required>
+                    <input id="username" placeholder="输入用户名" type="text" class="span12" required>
                     <label>密码</label>
-                    <input type="password" class="span12" required>
+                    <input type="password" placeholder="输入密码" class="span12" required>
                     <p  style="">
                     <a href="#" >注册</a>
                     <a href="#">忘记密码？</a>
