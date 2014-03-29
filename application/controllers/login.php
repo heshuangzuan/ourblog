@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //
 //  login.php
 //  Login Controller
@@ -7,6 +7,7 @@
 //
 class Login extends CI_Controller {
 
+	private $_data = array();
     /**
      * 构造函数
      */
@@ -32,8 +33,8 @@ class Login extends CI_Controller {
 // 		var_dump($data);
 
 // 		echo $this->user->update_user(1, array('name' => 'papapa'));
-		
-// 		$this->load->view('login');
+		$this->_data['page_title'] = '登陆';
+ 		$this->load->view('login',$this->_data);
 	}
 }
 
