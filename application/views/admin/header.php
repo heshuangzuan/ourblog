@@ -39,7 +39,7 @@
 <body>
 <html>
     <div class="navbar">
-        <div class="navbar-inner" style="height:40px;">
+        <div class="navbar-inner">
                 <ul class="nav pull-right">
                     <!--<li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>-->
                     <li class="dropdown">
@@ -67,7 +67,7 @@
 
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="#"><i class="glyphicon icon-user"></i>主页</a></li>
+            <li><a href="#"><i class="icon-user"></i>主页</a></li>
             <li class="<?php echo $article_active?>"><a href="<?php echo base_url();?>index.php/admin/article">文章管理</a></li>
             <li class="<?php echo $article_write_active?>"><a href="<?php echo base_url();?>index.php/admin/article/write">写文章</a></li>
         </ul>
@@ -79,7 +79,7 @@
             <li ><a href="#">修改密码</a></li>
         </ul>
         
-        <a href="<?php echo base_url();?>index.php/admin/help" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+        <a href="<?php echo base_url();?>index.php/admin/help" class="nav-header" ><i class="icon-briefcase"></i>帮助</a>
         <a href="#" class="nav-header" ><i class="icon-comment"></i>关于我们</a>
     </div>
 </html>
