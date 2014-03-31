@@ -28,7 +28,7 @@ $this->load->view('head');
                     <label>再次输入密码</label>
                     <input type="password" class="span12" required>
                     <label>邮箱地址</label>
-                    <input type="text" class="span12">
+                    <input type="email" class="span12">
                     <button href="#" type="submit" class="btn btn-primary pull-right">注册</button>
                     <label class="remember-me"><input type="checkbox"> 我同意 <a href="#">合同条款</a></label>
                     <div class="clearfix"></div>
