@@ -30,7 +30,7 @@ $this->load->view('head');
                     <label>邮箱地址</label>
                     <input type="email" class="span12">
                     <button href="#" type="submit" class="btn btn-primary pull-right">注册</button>
-                    <label class="remember-me"><input type="checkbox"> 我同意 <a href="#">合同条款</a></label>
+                    <label class="remember-me"><input type="checkbox" required> 我同意 <a href="#">合同条款</a></label>
                     <div class="clearfix"></div>
                 </form>
             </div>
