@@ -30,35 +30,40 @@ $this->load->view('head');
         <a href="#page-stats" class="block-heading" data-toggle="collapse">Latest Stats</a>
         <div id="page-stats" class="block-body collapse in">
 
-            <div class="stat-widget-container">
-                <div class="stat-widget">
-                    <div class="stat-button">
-                        <p class="title">2,500</p>
-                        <p class="detail">Accounts</p>
-                    </div>
-                </div>
+            <div class="stat-widget-container" style="background-color:#4d5b76;">
+<div class="container" style="width:940px;">
+  <div id="carousel1" class="carousel slide">
+  	<div class="carousel-inner">
+      <div class="item active">
+      <img src="<?php echo base_url();?>assets/img/3.gif" alt="">
+      <div class="carousel-caption">
+      <h4>标题一</h4>          
+      <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+      </div>
+	  
+      <div class="item">
+      <img src="<?php echo base_url();?>assets/img/2.gif" alt="">
+      <div class="carousel-caption">
+      <h4>标题二</h4>
+      <p> Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+      </div>
+	  
+      <div class="item">
+      <img src="<?php echo base_url();?>assets/img/1.gif" alt="">
+      <div class="carousel-caption">
+      <h4>标题三</h4>
+      <p>Egestas eget quam. Donec id elit non mi porta gravida at eget metus. </p>
+      </div>
+      </div>
+    </div>
+    <a  href="#carousel1" data-slide="prev" class="left carousel-control"><i style="padding-top:12px;" class="icon-chevron-left"></i></a>
+    <a  href="#carousel1" data-slide="next" class="right carousel-control"><div><i style="padding-top:12px;"  class="icon-chevron-right"></i></div></a>
+   </div>
 
-                <div class="stat-widget">
-                    <div class="stat-button">
-                        <p class="title">3,299</p>
-                        <p class="detail">Subscribers</p>
-                    </div>
-                </div>
-
-                <div class="stat-widget">
-                    <div class="stat-button">
-                        <p class="title">$1,500</p>
-                        <p class="detail">Pending</p>
-                    </div>
-                </div>
-
-                <div class="stat-widget">
-                    <div class="stat-button">
-                        <p class="title">$12,675</p>
-                        <p class="detail">Completed</p>
-                    </div>
-                </div>
-
+  
+</div>
             </div>
         </div>
     </div>
