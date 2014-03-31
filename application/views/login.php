@@ -7,7 +7,7 @@ $this->load->view('head');
                 <ul class="nav pull-right">
                     
                 </ul>
-                <a class="brand" href="index.html"><span class="first">我们的</span> <span class="second">博客系统</span></a>
+                <a class="brand" href="<?php echo base_url();?>index.php/login"><span class="first">我们的</span> <span class="second">博客系统</span></a>
         </div>
     </div>
     
