@@ -23,7 +23,7 @@ $this->load->view('head');
                     <input type="password" placeholder="输入密码" class="span12" required>
                     <p  style="">
                     <a href="register" >注册</a>
-                    <a href="#">忘记密码？</a>
+                    <a href="resetpwd">忘记密码？</a>
                     <button href="#" type="submit" class="btn btn-primary pull-right">登陆</button></p>
                     
                     <!--<label class="remember-me"><input type="checkbox"> Remember me</label>-->

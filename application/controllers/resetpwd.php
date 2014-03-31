@@ -5,7 +5,7 @@
 //
 //  Created by zuanzuan on 3/24/14.
 //
-class Register extends CI_Controller {
+class Resetpwd extends CI_Controller {
 
 	private $_data = array();
     /**
@@ -21,8 +21,8 @@ class Register extends CI_Controller {
      */
 	public function index()
 	{
-		$this->_data['page_title'] = '×¢²á';
- 		$this->load->view('register',$this->_data);
+		$this->_data['page_title'] = 'ÖØÖÃÃÜÂë';
+ 		$this->load->view('resetpwd',$this->_data);
 	}
 }
 
