@@ -43,15 +43,15 @@
         <a href="#accounts-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-briefcase"></i>账户管理</a>
         <ul id="accounts-menu" class="nav nav-list collapsed">
             <li class="<?php echo $page_listuser_active; ?>"><a href="<?php echo base_url();?>index.php/listuser">用户管理</a></li>
-            <li ><a href="#">个人信息</a></li>
-            <li ><a href="#">修改密码</a></li>
+            <li class="<?php echo $page_personalinfo_active; ?>"><a href="<?php echo base_url();?>index.php/user/userinfo">个人信息</a></li>
+            <li class="<?php echo $page_changepwd_active; ?>"><a href="<?php echo base_url();?>index.php/user/changepwd">修改密码</a></li>
         </ul>
 <?php }else{?>  
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户管理</a>
         <ul id="accounts-menu" class="nav nav-list collapse">
             <li class="<?php echo $page_listuser_active; ?>"><a href="<?php echo base_url();?>index.php/listuser">用户管理</a></li>
-            <li ><a href="#">个人信息</a></li>
-            <li ><a href="#">修改密码</a></li>
+            <li ><a href="<?php echo base_url();?>index.php/user/userinfo">个人信息</a></li>
+            <li ><a href="<?php echo base_url();?>index.php/user/changepwd">修改密码</a></li>
         </ul>
 <?php }?>
         <a href="<?php echo base_url();?>index.php/help" class="nav-header" ><i class="icon-briefcase"></i>帮助</a>

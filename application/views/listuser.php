@@ -3,6 +3,10 @@ $this->load->view('head');
 $this->load->view('header');
 ?>
     <div class="content">
+        <div class="header">
+            
+            <h1 class="page-title">用户管理</h1>
+        </div>
 <div class="well">
     <table class="table">
       <thead>
@@ -21,7 +25,7 @@ $this->load->view('header');
           <td>Tompson</td>
           <td>the_mark7</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
@@ -31,7 +35,7 @@ $this->load->view('header');
           <td>Jacobs</td>
           <td>ash11927</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
@@ -41,7 +45,7 @@ $this->load->view('header');
           <td>Ann</td>
           <td>audann84</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
@@ -51,7 +55,7 @@ $this->load->view('header');
           <td>Robinson</td>
           <td>jr5527</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
@@ -61,7 +65,7 @@ $this->load->view('header');
           <td>Butler</td>
           <td>aaron_butler</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
@@ -71,11 +75,21 @@ $this->load->view('header');
           <td>Albert</td>
           <td>cab79</td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a href="user/edit"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
       </tbody>
     </table>
+</div>
+<div class="pagination">
+    <ul>
+        <li><a href="#">Prev</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">Next</a></li>
+    </ul>
 </div>
     </div>
