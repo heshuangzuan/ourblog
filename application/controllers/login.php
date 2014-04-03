@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 
 // 		echo $this->user->update_user(1, array('name' => 'papapa'));
 		$this->_data['page_title'] = '登陆';
- 		$this->load->view('login',$this->_data);
+ 		$this->load->view('login', $this->_data);
 	}
 }
 

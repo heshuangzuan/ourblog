@@ -61,6 +61,26 @@ class User_model extends CI_Model {
     	$this->db->update('users', $data);
 		return $this->db->affected_rows() > 0 ? TRUE : FALSE;
     }
+    
+    /**
+     * 检查是否存在用户
+     *
+     * @param $value 值
+     * @return BOOL 成功与否
+     */
+    public function check_exist($key='name', $value='')
+    {
+        if (!empty($value))
+        {
+            $this->db->select('uid')->from('users')->where($key, $value);
+            $query = $this->db->get();
+            $num = $query->num_rows();
+            $query->free_result();
+
+            return $num > 0 ? TRUE : FALSE;
+        }
+        return FALSE;
+    }
 }
 
 /* End of file user_model.php */
