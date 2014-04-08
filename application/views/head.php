@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css" />  
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/font-awesome.css" />   
         <script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url();?>assets/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?php echo base_url();?>assets/js/bootstrap.js" type="text/javascript"></script>\
+        <script src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js" type="text/javascript"></script>
     <style type="text/css">
         #line-chart {
             height:300px;

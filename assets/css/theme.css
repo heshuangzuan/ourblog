@@ -11,6 +11,9 @@
     More info at: http://lesselements.com
 -----------------------------------------------------*/
 /*Standard Elements*/
+.activepage{
+	background-color:#999 !important;
+	}
 body {
   background: #eee;
   background-image: url(http://subtlepatterns.com/patterns/furley_bg.png);

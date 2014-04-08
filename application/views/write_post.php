@@ -3,5 +3,44 @@ $this->load->view('head');
 $this->load->view('header');
 ?>
     <div class="content">
-   写文章
+        <div class="header">
+            
+            <h1 class="page-title">写文章</h1>
+        </div>
+            <div class="block-body">
+                <form method='post'>
+                            <label>标题</label>
+        <input type="text" class="input-xlarge">
+<label>图片</label>
+                                    <div class="controls fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="fileupload-preview thumbnail" style="width: 210px; height: 150px;">
+                                        </div><br>
+                                        <span class="btn btn-file">
+                                        <span class="fileupload-new">选择图片</span>
+                                        <span class="fileupload-exists">重选</span>
+                                        <input type="file" name="image"/>
+                                        </span>
+                                        
+                                        <label style="margin-left: -130px;margin-top: -20px" class="control-label" for="inputEmail">修改图片：</label>
+                                    </div>
+        <label>内容</label>
+	<textarea id="editor" name="body" placeholder="请输入新闻正文" rows="10"><s:property value="news.body"/></textarea>
+	<br>
+  	<div class="btn-group">
+    		<button  class="btn btn-primary"><i class="icon-save"></i> 保存</button>
+  	</div>
+                </form>
+            </div>
     </div>
+    <script type="text/javascript">
+        $(function () {
+            CKEDITOR.replace("editor");
+            CKEDITOR.editorConfig = function (config) {
+                config.font_names = '宋体/宋体;黑体/黑体;仿宋/仿宋_GB2312;楷体/楷体_GB2312;隶书/隶书;幼圆/幼圆;微软雅黑/微软雅黑;' + config.font_names;
+                config.defaultLanguage = 'zh-cn'
+                //默认的字体名 plugins/font/plugin.js
+                config.font_defaultLabel = '宋体';
+            };
+        });
+    </script>
+        <script src="<?php echo base_url();?>/assets/js/bootstrap-fileupload.js" type="text/javascript"></script>

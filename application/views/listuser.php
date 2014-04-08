@@ -12,9 +12,9 @@ $this->load->view('header');
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>用户名</th>
+          <th>昵称</th>
+          <th>性别</th>
           <th style="width: 26px;"></th>
         </tr>
       </thead>
@@ -85,7 +85,7 @@ $this->load->view('header');
 <div class="pagination">
     <ul>
         <li><a href="#">Prev</a></li>
-        <li><a href="#">1</a></li>
+        <li><a class="activepage" href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
