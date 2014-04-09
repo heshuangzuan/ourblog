@@ -2292,6 +2292,8 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  float:right;
+  margin-right: 36px;
 }
 .btn-group > .btn + .btn {
   margin-left: -1px;
