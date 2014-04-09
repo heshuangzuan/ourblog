@@ -11,18 +11,7 @@ $this->load->view('header');
                 <form method='post'>
                             <label>标题</label>
         <input type="text" class="input-xlarge">
-<label>图片</label>
-                                    <div class="controls fileupload fileupload-new" data-provides="fileupload">
-                                        <div class="fileupload-preview thumbnail" style="width: 210px; height: 150px;">
-                                        </div><br>
-                                        <span class="btn btn-file">
-                                        <span class="fileupload-new">选择图片</span>
-                                        <span class="fileupload-exists">重选</span>
-                                        <input type="file" name="image"/>
-                                        </span>
-                                        
-                                        <label style="margin-left: -130px;margin-top: -20px" class="control-label" for="inputEmail">修改图片：</label>
-                                    </div>
+                                    
         <label>内容</label>
 	<textarea id="editor" name="body" placeholder="请输入新闻正文" rows="10"><s:property value="news.body"/></textarea>
 	<br>
