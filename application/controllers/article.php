@@ -30,6 +30,12 @@ class article extends CI_Controller {
 		$this->_data['article_write_active'] = 'active';
 		$this->load->view('write_post',$this->_data);
 	}
+	public function show()
+	{
+		/** set title ，博客文章全文显示*/
+		$this->_data['page_title'] = '我的博客-标题';
+		$this->load->view('show_article',$this->_data);
+	}
 }
 
 /* End of file welcome.php */
