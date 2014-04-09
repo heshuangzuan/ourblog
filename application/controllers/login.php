@@ -16,6 +16,7 @@ class Login extends CI_Controller {
         parent::__construct();
         
         $this->load->model('User_model', 'user');
+        $this->load->library('form_validation');
     }
     
     /**
@@ -23,16 +24,16 @@ class Login extends CI_Controller {
      */
 	public function index()
 	{
-		// $data = array();
-// 		$data['name'] = 'zuanzuan';
-// 		$data['password'] = '123123';
-// 		$data['email'] = 'heshuangzuan@icloud.com';
-// 		echo $this->user->add_user($data);
-// 		
-// 		$data = $this->user->get_user_by_id(1);
-// 		var_dump($data);
-
-// 		echo $this->user->update_user(1, array('name' => 'papapa'));
+        $success = $this->user->validate_user('name', 'papapa', '123123');
+        
+	    if (!$success) {
+    	    echo '对的';
+	    }
+	    else {
+	    
+    	    echo '不对不对';
+	    }
+	    
 		$this->_data['page_title'] = '登陆';
  		$this->load->view('login', $this->_data);
 	}

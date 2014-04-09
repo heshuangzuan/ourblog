@@ -81,6 +81,44 @@ class User_model extends CI_Model {
         }
         return FALSE;
     }
+    
+    /**
+     * 检查用户是否通过验证
+     *
+     * @param $key { username }
+     * @param $value 值
+     * @param $password 密码
+     * @return FALSE/array 否/用户信息
+     */
+    public function validate_user($key = 'name', $value = '', $password)
+    {
+        $matched = FALSE;
+
+        if (!empty($value))
+        {
+            $this->db->where($key, $value);
+            $query = $this->db->get('users');
+
+            if (1 === $query->num_rows())
+            {
+                $data = $query->row_array();
+            }
+
+            if (!empty($data))
+            {
+                $matched = $password === $data['password'] ? $data : FALSE;
+
+                if (FALSE === $matched)
+                {
+                    // update the illegal_count
+                }
+            }
+
+            $query->free_result();
+        }
+
+        return $matched;
+    }
 }
 
 /* End of file user_model.php */
