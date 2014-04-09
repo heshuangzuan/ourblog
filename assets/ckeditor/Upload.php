@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // fileUplode 网站文件夹名。需更具体参照博客目录 line 19 20
 //$config ['site_url'] ="localhost/fileUplode" line 22网站网址需更改
@@ -17,9 +17,9 @@ $config ['flash_size'] = 2000; //上传flash大小上限 单位：KB
 $config ['img_size'] = 5000; //上传img大小上限 单位：KB
 $config ['message'] = "文件上传成功!"; //上传成功后显示的消息，若为空则不显示 上传成功
 $config ['name'] = mktime (); //上传后的文件命名规则 这里以unix时间戳来命名
-$config ['flash_dir'] = $_SERVER['DOCUMENT_ROOT']."/GitHub/ourblog/upload"; //上传flash文件地址 采用绝对地址 方便upload.php文件放在站内的任何位置 后面不加"/",上传的文件将放在网站根目录下的upload文件夹下  fileUplode 网站文件夹名。需更改
-$config ['img_dir'] = $_SERVER['DOCUMENT_ROOT']."/GitHub/ourblog/upload"; //上传img文件地址 采用绝对地址 采用绝对地址 方便upload.php文件放在站内的任何位置 后面不加"/"，上传的文件将放在网站根目录下的upload文件夹下
-$config ['site_url'] = "http://localhost/GitHub/ourblog"; //网站的网址 这与图片上传后的地址有关 最后不加"/" 可留空
+$config ['flash_dir'] = $_SERVER['DOCUMENT_ROOT']."/OurBlog/upload"; //上传flash文件地址 采用绝对地址 方便upload.php文件放在站内的任何位置 后面不加"/",上传的文件将放在网站根目录下的upload文件夹下  fileUplode 网站文件夹名。需更改
+$config ['img_dir'] = $_SERVER['DOCUMENT_ROOT']."/OurBlog/upload"; //上传img文件地址 采用绝对地址 采用绝对地址 方便upload.php文件放在站内的任何位置 后面不加"/"，上传的文件将放在网站根目录下的upload文件夹下
+$config ['site_url'] = "http://localhost/OurBlog"; //网站的网址 这与图片上传后的地址有关 最后不加"/" 可留空
 //没有文件夹时则创建
 isDirAll($config ['flash_dir']);
 isDirAll($config ['img_dir']);
