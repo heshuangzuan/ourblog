@@ -16,11 +16,11 @@ $this->load->view('head');
         <div class="block">
             <p class="block-heading">登陆</p>
             <div class="block-body">
-                <form action="article">
+                <form method='post'>
                     <label>用户名</label>
-                    <input id="username" placeholder="输入用户名" type="text" class="span12" required>
+                    <input name="username" id="username" placeholder="输入用户名" type="text" class="span12" required>
                     <label>密码</label>
-                    <input type="password" placeholder="输入密码" class="span12" required>
+                    <input name="password" type="password" placeholder="输入密码" class="span12" required>
                     <p  style="">
                     <a href="register" >注册</a>
                     <a href="resetpwd">忘记密码？</a>
@@ -29,6 +29,7 @@ $this->load->view('head');
                     <!--<label class="remember-me"><input type="checkbox"> Remember me</label>-->
                     <div class="clearfix"></div>
                 </form>
+                <p><?php echo validation_errors(); ?></p>
             </div>
         </div>
     </div>
