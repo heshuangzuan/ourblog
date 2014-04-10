@@ -8,18 +8,19 @@ $this->load->view('header');
             <h1 class="page-title">写文章</h1>
         </div>
             <div class="block-body">
-                <form method='post'>
+                <form method='post' >
                             <label>标题</label>
-        <input type="text" class="input-xlarge">
+        <input type="text" name="art_titlle" class="input-xlarge">
                                     
         <label>内容</label>
 	<textarea id="editor" name="body" placeholder="请输入新闻正文" rows="10"><s:property value="news.body"/></textarea>
 	<br>
   	<div class="btn-group">
-    		<button  class="btn btn-primary"><i class="icon-save"></i> 保存</button>
+    		<button  type="submit" class="btn btn-primary"><i class="icon-save"></i> 保存</button>
   	</div>
                 </form>
             </div>
+			
     </div>
     <script type="text/javascript">
         $(function () {
@@ -32,4 +33,24 @@ $this->load->view('header');
             };
         });
     </script>
+	<!--
+ <script type="text/javascript">
+        function test()
+        {
+
+　　　　//TextArea1是ckeditor的id或者名字
+      //获取TextArea1的内容
+            var val = CKEDITOR.instances.editor.getData(); 
+			 if (val.length == 0)
+            {
+                alert("空白");
+            }
+            else
+            {
+                alert(val);
+            }
+        }  
+</script>
+-->
+	
         <script src="<?php echo base_url();?>/assets/js/bootstrap-fileupload.js" type="text/javascript"></script>
