@@ -18,6 +18,12 @@ class article extends CI_Controller {
     }
 	public function index()
 	{
+	    $this->load->library('auth');
+	    if (!$this->auth->has_login()) redirect();
+        $user = unserialize($this->session->userdata('user'));
+        var_dump($user);
+        exit();
+        
 		/** set title */
 		$this->_data['page_title'] = 'ÎÄÕÂ¹ÜÀí';
 		//class="active"
