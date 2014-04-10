@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.html or http://ckeditor.com/license
  */
@@ -37,8 +37,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 	
 	//文件上传upload.php文件位置需要自行更改
-config.filebrowserImageUploadUrl = 'http://localhost/GitHub/ourblog/assets/ckeditor/upload.php?type=img';
-config.filebrowserFlashUploadUrl = 'http://localhost/GitHub/ourblog/assets/ckeditor/upload.php?type=flash';
+config.filebrowserImageUploadUrl = 'http://localhost/OurBlog/assets/ckeditor/upload.php?type=img';
+config.filebrowserFlashUploadUrl = 'http://localhost/OurBlog/assets/ckeditor/upload.php?type=flash';
 
 };
 

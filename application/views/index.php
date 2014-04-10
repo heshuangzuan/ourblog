@@ -1,33 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
-$this->load->view('head');
+$this->load->view('index_header');
 ?>
-    <div class="navbar">
-        <div class="navbar-inner">
-        
-                <ul class="nav pull-right">
-                <li>
-                            <form class="search form-inline" style="margin: 5px 20px 0px 0px;">
-            <input type="text" placeholder="请出入搜索内容">
-        				</form>
-        </li>
-                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">搜索</a></li>
-                    <li id="fat-menu" class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> User
-                        </a>
-                    </li>
-                    
-                </ul>
-                <a class="brand" href="index.html"><span class="second">我的博客</span></a>
-        </div>
-    </div>
+
 <div class="row-fluid">
   <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Just a quick note:</strong> Hope you like the theme!
+        <strong>欢迎光临!</strong> 希望大家踊跃评论!
     </div>
         <div class="block">
-        <a href="#page-stats" class="block-heading" data-toggle="collapse">Latest Stats</a>
+        <a href="#page-stats" class="block-heading" data-toggle="collapse">博客技术点</a>
         <div id="page-stats" class="block-body collapse in">
 
             <div class="stat-widget-container" style="background-color:#4d5b76;">
@@ -68,6 +49,7 @@ $this->load->view('head');
         </div>
     </div>
 </div>
+    <!-- 此处可按照时间排序显示最新的博客文章-->
 <div class="row-fluid">
     <div class="block span6">
         <a href="#tablewidget" class="block-heading" data-toggle="collapse">最新文章<span class="label label-warning">+10</span></a>
@@ -77,38 +59,38 @@ $this->load->view('head');
                 <tr>
                   <th>标题</th>
                   <th>时间</th>
-                  <th>内容</th>
+                  <th>简介</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Mark</td>
                   <td>Tompson</td>
-                  <td>the_mark7<a href="#">More...</a></td>
+                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
                                 <tr>
                   <td>Mark</td>
                   <td>Tompson</td>
-                  <td>the_mark7<a href="#">More...</a></td>
+                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
                                 <tr>
                   <td>Mark</td>
                   <td>Tompson</td>
-                  <td>the_mark7<a href="#">More...</a></td>
+                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
                                 <tr>
                   <td>Mark</td>
                   <td>Tompson</td>
-                  <td>the_mark7<a href="#">More...</a></td>
+                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
                                 <tr>
                   <td>Mark</td>
                   <td>Tompson</td>
-                  <td>the_mark7<a href="#">More...</a></td>
+                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
               </tbody>
             </table>
-            <p><a href="#">More...</a></p>
+            <p><a href="index.php/article/show">More...</a></p>
         </div>
     </div>
     <div class="block span6">
@@ -123,13 +105,9 @@ $this->load->view('head');
     </div>
 </div>
 
-                    <footer>
-                        <hr>
 
-                        <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
-                        <p class="pull-right">关于<a href="#" target="_blank">毕业设计</a> by <a href="#" target="_blank">王前跃</a></p>
-
-                        <p>&copy; 2014 <a href="#" >王前跃</a></p>
-                    </footer>
 </body>
 </html>
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
+$this->load->view('footer');
+?>

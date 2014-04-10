@@ -42,7 +42,7 @@ class Login extends CI_Controller {
             {
                 redirect('article');
             }
-            // $this->load->view('login');
+             $this->load->view('login');
         }
 	}
 	

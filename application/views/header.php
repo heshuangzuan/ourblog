@@ -12,7 +12,7 @@
                         <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#">我的账户</a></li>
                             <li class="divider"></li>
-                            <li><a tabindex="-1" href="login">退出</a></li>
+                            <li><a tabindex="-1" href="<?php echo base_url();?>index.php/login">退出</a></li>
                         </ul>
                     </li>
 
