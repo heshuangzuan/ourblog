@@ -14,6 +14,7 @@ class article extends CI_Controller {
 	$this->_data['page_listuser_active'] = '';//用户管理
 	$this->_data['page_personalinfo_active'] = '';//个人信息
 	$this->_data['page_changepwd_active'] = '';//修改密码
+	$this->load->library('Auth');
     }
 	public function index()
 	{
@@ -40,6 +41,16 @@ class article extends CI_Controller {
 	{
 		/** set title */
 		$this->_data['page_title'] = '文章发布成功';
+		      //检查用户是否登录
+	     if (!$this->auth->has_login()) 
+	         redirect();
+        $user = unserialize($this->session->userdata('user'));
+			    $data = array(
+                'art_title' => $_post('username'),
+                'art_body' => $_post('password'),
+                'art_auth' => $user['uid']);
+		
+		
 		$this->load->view('insert_art',$this->_data);
 	}
 	
