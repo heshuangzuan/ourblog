@@ -36,6 +36,13 @@ class article extends CI_Controller {
 		$this->_data['page_title'] = '我的博客-标题';
 		$this->load->view('show_article',$this->_data);
 	}
+	public function insert_art()
+	{
+		/** set title */
+		$this->_data['page_title'] = '文章发布成功';
+		$this->load->view('insert_art',$this->_data);
+	}
+	
 }
 
 /* End of file welcome.php */

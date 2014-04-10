@@ -7,16 +7,16 @@ $this->load->view('header');
             
             <h1 class="page-title">写文章</h1>
         </div>
-            <div class="block-body">
-                <form method='post'>
+            <div class="block-body" >
+                <form method="post" action="insert_art">
                             <label>标题</label>
-        <input type="text" class="input-xlarge">
+        <input name="titlle" type="text" class="input-xlarge">
                                     
         <label>内容</label>
 	<textarea id="editor" name="body" placeholder="请输入新闻正文" rows="10"><s:property value="news.body"/></textarea>
 	<br>
   	<div class="btn-group">
-    		<button  class="btn btn-primary"><i class="icon-save"></i> 保存</button>
+    		<button  type="submit" class="btn btn-primary"><i class="icon-save"></i> 保存</button>
   	</div>
                 </form>
             </div>
