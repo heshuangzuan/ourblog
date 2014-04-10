@@ -47,7 +47,7 @@ class Register extends CI_Controller {
             
             if ($success)
             {
-                $this->load->view('register_success');
+                $this->load->view('login');
             }
             else
             {

@@ -1,5 +1,5 @@
 ﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
-$this->load->view('index_header');
+$this->load->view('head');
 ?>
   <body>
     <div class="navbar">

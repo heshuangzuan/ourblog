@@ -16,28 +16,37 @@ $this->load->view('index_header');
   <div id="carousel1" class="carousel slide">
   	<div class="carousel-inner">
       <div class="item active">
-      <img src="<?php echo base_url();?>assets/img/3.gif" alt="">
+      <img src="<?php echo base_url();?>assets/img/3.jpg" alt="">
       <div class="carousel-caption">
-      <h4>标题一</h4>          
-      <p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <h4>速度第一</h4>          
+      <p>采用最流行的php语言+MYSQL数据库+jquery，体现出强大的运行速度。</p>
       </div>
       </div>
 	  
       <div class="item">
-      <img src="<?php echo base_url();?>assets/img/2.gif" alt="">
+      <img src="<?php echo base_url();?>assets/img/2.jpg" alt="">
       <div class="carousel-caption">
-      <h4>标题二</h4>
-      <p> Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <h4>移动前端Bootstrap</h4>
+      <p> 采用最流行的前端框架Bootstrap，让网站在移动设备上流畅运行。</p>
       </div>
       </div>
 	  
       <div class="item">
-      <img src="<?php echo base_url();?>assets/img/1.gif" alt="">
+      <img src="<?php echo base_url();?>assets/img/1.jpg" alt="">
       <div class="carousel-caption">
-      <h4>标题三</h4>
-      <p>Egestas eget quam. Donec id elit non mi porta gravida at eget metus. </p>
+      <h4>速度敏捷CI</h4>
+      <p>采用最为快捷而且强大的php开源框架CodeIgniter,让开发效率和成本大大减小。 </p>
       </div>
       </div>
+
+ 	<div class="item">
+      <img src="<?php echo base_url();?>assets/img/4.jpg" alt="">
+      <div class="carousel-caption">
+      <h4>标准MVC架构</h4>
+      <p>采用最新的php框架CodeIgniter_2.1.4。</p>
+      </div>
+      </div>
+
     </div>
     <a  href="#carousel1" data-slide="prev" class="left carousel-control"><i style="padding-top:12px;" class="icon-chevron-left"></i></a>
     <a  href="#carousel1" data-slide="next" class="right carousel-control"><div><i style="padding-top:12px;"  class="icon-chevron-right"></i></div></a>
@@ -97,10 +106,10 @@ $this->load->view('index_header');
         <a href="#widget1container" class="block-heading" data-toggle="collapse">关于博客 </a>
         <div id="widget1container" class="block-body collapse in">
             <h2>毕业设计介绍</h2>
-            <p>This template was developed with <a href="http://middlemanapp.com/" target="_blank">Middleman</a> and includes .erb layouts and views.</p>
-            <p>All of the views you see here (sign in, sign up, users, etc) are already split up so you don't have to waste your time doing it yourself!</p>
-            <p>The layout.erb file includes the header, footer, and side navigation and all of the views are broken out into their own files.</p>
-            <p>If you aren't using Ruby, there is also a set of plain HTML files for each page, just like you would expect.</p>
+<p>项目名称：个人网站的设计与实现</p>
+<p>项目背景与目的：根据组员的实际能力，制作一个可运行和使用的个人网站，通过对相关网页制作工具和编程工具以及数据库的运用，达到交流展示的目的。</p>
+<p>项目目标：做一个实际可用的个人动态网站，有文字和图片展示，音乐播放。管理员有日志管理发布修改权限，可上传照片，回复访客留言的功能。访客可浏览文章和照片，并加以评论。</p>
+<p>项目分工：前端界面设计:王前跃  注册登录：何双钻   博文：李强   数据收集，文档：王嘉豪，赵玺</p>
         </div>
     </div>
 </div>
