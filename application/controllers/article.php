@@ -15,6 +15,8 @@ class article extends CI_Controller {
 	$this->_data['page_personalinfo_active'] = '';//个人信息
 	$this->_data['page_changepwd_active'] = '';//修改密码
 	$this->load->library('Auth');
+	$this->load->library('form_validation');
+	 $this->load->model('Article_model');
     }
 	public function index()
 	{
@@ -33,9 +35,13 @@ class article extends CI_Controller {
 	public function write()
 	{
 		/** set title */
-		$this->_data['page_title'] = '撰写新文章';
-		$this->_data['article_write_active'] = 'active';
-		$this->load->view('write_post',$this->_data);
+
+			$this->_data['page_title'] = '撰写新文章';
+			$this->_data['article_write_active'] = 'active';
+			$this->load->view('write_post',$this->_data);
+
+            
+
 	}
 	public function show()
 	{
@@ -43,21 +49,32 @@ class article extends CI_Controller {
 		$this->_data['page_title'] = '我的博客-标题';
 		$this->load->view('show_article',$this->_data);
 	}
+	//文章添加  中文post乱码未解决
 	public function insert_art()
 	{
-		/** set title */
-		$this->_data['page_title'] = '文章发布成功';
-		      //检查用户是否登录
-	     if (!$this->auth->has_login()) 
-	         redirect();
-        $user = unserialize($this->session->userdata('user'));
-			    $data = array(
-                'art_title' => $_post('username'),
-                'art_body' => $_post('password'),
-                'art_auth' => $user['uid']);
+		if($this->auth->has_login())
+		{
+			 $user = unserialize($this->session->userdata('user'));
+		         		  $data = array(
+            	 		   'title' => $this->input->post('titlle'),
+  	 		  	   			'text' => $this->input->post('body'),
+							'allow_comment' => '1',
+							'status'=>'0',
+							'author_id' => $user['uid'],
+                            'created'=>now(),
+							'modified'=>'0',
+							'deleted'=>'0'
+          			 		 );
+          		 		 $success = $this->Article_model->add_art($data);
+						 if($success)
+						 {
+							 $this->_data['page_title'] = '文章发布成功';
+							 $this->load->view('insert_art',$this->_data);
+						 }
+		}
 		
-		
-		$this->load->view('insert_art',$this->_data);
+
+		 
 	}
 	
 }

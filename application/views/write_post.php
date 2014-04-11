@@ -8,7 +8,7 @@ $this->load->view('header');
             <h1 class="page-title">ะดฮฤีย</h1>
         </div>
             <div class="block-body" >
-                <form method="post" action="insert_art">
+                <form method="post"  action="insert_art">
                             <label>ฑ๊ฬโ</label>
         <input name="titlle" type="text" class="input-xlarge">
                                     
