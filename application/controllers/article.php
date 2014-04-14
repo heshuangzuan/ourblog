@@ -26,11 +26,18 @@ class article extends CI_Controller {
        // var_dump($user);
         //exit();
         
-		/** set title */
-		$this->_data['page_title'] = '文章管理';
-		//class="active"
-		$this->_data['article_active'] = 'active';
-		$this->load->view('article',$this->_data);
+		if($this->auth->has_login())
+		{
+			$this->_data['article_active'] = 'active';
+			$this->_data['page_title'] = '文章管理';
+			$this->_data['user_name'] = $user['name'];	//添加用户名	
+			$user = unserialize($this->session->userdata('user'));	
+			$this->_data['art_array'] = $this->Article_model->s_user_art($user['uid']);
+			 // var_dump($this->_data);
+			 // exit();
+
+			$this->load->view('article',$this->_data);
+		}
 	}
 	public function write()
 	{
@@ -40,11 +47,11 @@ class article extends CI_Controller {
 			$this->_data['article_write_active'] = 'active';
 			$this->load->view('write_post',$this->_data);
 
-            
-
 	}
 	public function show()
 	{
+		//var_dump($art_id);
+		// exit();
 		/** set title ，博客文章全文显示*/
 		$this->_data['page_title'] = '我的博客-标题';
 		$this->load->view('show_article',$this->_data);
@@ -72,9 +79,7 @@ class article extends CI_Controller {
 							 $this->load->view('insert_art',$this->_data);
 						 }
 		}
-		
-
-		 
+				 
 	}
 	
 }

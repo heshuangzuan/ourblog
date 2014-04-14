@@ -8,6 +8,7 @@ $this->load->view('header');
             <h1 class="page-title">ÎÄÕÂ¹ÜÀí</h1>
         </div>
 <div class="well">
+
     <table class="table">
       <thead>
         <tr>
@@ -18,17 +19,22 @@ $this->load->view('header');
           <th style="width: 26px;"></th>
         </tr>
       </thead>
+	  
       <tbody>
+	 <?php foreach ($art_array as $art_item): ?>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Tompson</td>
-          <td>the_mark7</td>
+          <td><?php echo $art_item['pid']?></td>
+          <td><?php echo $art_item['title']?></td>
+          <td><?php echo $user_name?></td>
+          <td><?php echo $art_item['text']?></td>
+		  <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
           <td>
               <a href="article/write"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
+	<?php endforeach ?>
+	<!--
         <tr>
           <td>2</td>
           <td>Ashley</td>
@@ -79,6 +85,7 @@ $this->load->view('header');
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
+		-->
       </tbody>
     </table>
 </div>

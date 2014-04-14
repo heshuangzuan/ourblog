@@ -72,7 +72,20 @@ $this->load->view('index_header');
                 </tr>
               </thead>
               <tbody>
-                <tr>
+
+                           
+	  <?php foreach ($art_array as $art_item): ?>
+        <tr>
+         
+          <td><?php echo $art_item['title']?></td>
+          <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
+          <td><?php echo $art_item['text']?></td>
+		  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
+		 
+
+        </tr>
+	<?php endforeach ?>
+	<!--
                   <td>Mark</td>
                   <td>Tompson</td>
                   <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
@@ -92,11 +105,7 @@ $this->load->view('index_header');
                   <td>Tompson</td>
                   <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
                 </tr>
-                                <tr>
-                  <td>Mark</td>
-                  <td>Tompson</td>
-                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-                </tr>
+				-->
               </tbody>
             </table>
             <p><a href="index.php/article/show">More...</a></p>
