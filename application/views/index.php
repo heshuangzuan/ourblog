@@ -59,9 +59,10 @@ $this->load->view('index_header');
     </div>
 </div>
     <!-- 此处可按照时间排序显示最新的博客文章-->
+<script>var i=0;</script>
 <div class="row-fluid">
     <div class="block span6">
-        <a href="#tablewidget" class="block-heading" data-toggle="collapse">最新文章<span class="label label-warning">+10</span></a>
+        <a href="#tablewidget" class="block-heading" data-toggle="collapse">最新文章<span class="label label-warning"></span></a>
         <div id="tablewidget" class="block-body collapse in">
             <table class="table">
               <thead>
@@ -80,32 +81,11 @@ $this->load->view('index_header');
           <td><?php echo $art_item['title']?></td>
           <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
           <td><?php echo $art_item['text']?></td>
-		  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-		 
+		  <td><a href="index.php/article/show" target="_blank">&nbsp;查看</a></td>
+		 <script>i++;</script>
 
         </tr>
 	<?php endforeach ?>
-	<!--
-                  <td>Mark</td>
-                  <td>Tompson</td>
-                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-                </tr>
-                                <tr>
-                  <td>Mark</td>
-                  <td>Tompson</td>
-                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-                </tr>
-                                <tr>
-                  <td>Mark</td>
-                  <td>Tompson</td>
-                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-                </tr>
-                                <tr>
-                  <td>Mark</td>
-                  <td>Tompson</td>
-                  <td>the_mark7<a href="index.php/article/show" target="_blank">More...</a></td>
-                </tr>
-				-->
               </tbody>
             </table>
             <p><a href="index.php/article/show">More...</a></p>
@@ -125,6 +105,7 @@ $this->load->view('index_header');
 
 
 </body>
+<script>$(".label-warning").html("+"+i);</script>
 </html>
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 $this->load->view('footer');
