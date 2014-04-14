@@ -103,7 +103,6 @@ $this->load->view('index_header');
     </div>
 </div>
 
-
 </body>
 <script>$(".label-warning").html("+"+i);</script>
 </html>

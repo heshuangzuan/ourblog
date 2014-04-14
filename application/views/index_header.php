@@ -7,7 +7,8 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css" />  
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/font-awesome.css" />   
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/font-awesome.css" />  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-responsive.min.css" /> 
         <script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/js/bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js" type="text/javascript"></script>
@@ -33,6 +34,12 @@
 			}
 .news_ts_tit{  line-height:40px; font-size:24px; color:#000;}
 .ccontent{ font-size:14px;  color:#000; line-height:25px; letter-spacing:1px; overflow:hidden;font-family:"Î¢ÈíÑÅºÚ";}
+.left-inner-addon { position: relative; }
+.left-inner-addon input, .left-inner-addon textarea { padding-left: 30px; }
+.left-inner-addon span { position: absolute; padding: 10px 12px; pointer-events: none; }
+
+.float_r { float: right }
+
     </style>
      <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.ico">
     <script type="text/javascript">

@@ -19,10 +19,61 @@ $this->load->view('index_header');
 </p><p>　　随后，习近平发表了重要讲话。他表示，看了你们的反恐训练，看到大家训练有素、作风顽强，我感到十分高兴。习近平强调，“猎鹰突击队”是国家级反恐拳头部队。希望大家牢记强军目标，严格训练、严格要求、严格管理，做到思想政治非常过硬、专业素质非常过硬、战斗作风非常过硬，努力成为国际一流水平的反恐特战劲旅，永远做党和人民的忠诚卫士。 
 </p><p>　　武警特种警察学院原是1982年成立的反劫机特种警察部队，是武警总部直接领导和指挥的一支国家反恐力量。学院组建以来，先后为国家和军队输送了一大批特战人才，出色完成一系列安保、处突特殊任务，为维护社会稳定作出突出贡献。2014年2月20日，习近平主席命名学院特种作战大队为中国人民武装警察部队“猎鹰突击队”。 
 </p><p>　　范长龙、许其亮、孟建柱、栗战书、郭声琨和李家祥、王建平、许耀元等参加有关活动。</p></div>
-
-        
+<div id="comment">
+	<div class="widget-box">
+    	<div class="widget-title"> 
+        	<span class="icon"> <i class="icon-list"></i> </span>
+            <h5>用户评论</h5>
+        </div>
+        <div class="widget-content nopadding"> 
+<ul class="recent-posts">
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av1.jpg"> </div>
+                <div class="article-post">
+                  
+                  <span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p>This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment. </p>
+                </div>
+              </li>
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av2.jpg"> </div>
+                <div class="article-post">
+                  <span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p>This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</p>
+                </div>
+              </li>
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av3.jpg"> </div>
+                <div class="article-post">
+                  <span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                  <p>This is a much longer one that will go on for a few lines.Itaffle to pad out the comment. </p>
+                </div>
+              </li>
+              <div id="lidiv"> </div>
+              <li>
+                <button class="btn btn-warning btn-mini">View All</button>
+              </li>
+ </ul>
+        </div>
     </div>
 </div>
+    <div class="col-md-7">
+		<div class="form-group" style="text-align:center">
+			<span class="glyphicon glyphicon-comment"></span>
+			<textarea name="message" rows="6" class="form-control" style="width:90%" id="input_message" placeholder="Message..."></textarea><br>
+			<button type="submit" id="pinglun" class="btn btn-primary" style="margin:0px 0px 0px 100px; float:left">评论</button>
+			<button type="reset" class="btn btn-default" style="margin:0px 0px 0px 100px; float:left">清除</button>
+		</div>
+	</div>
+    </div>
+</div>
+<script>
+$("#pinglun").click(function(){
+	var content=$("textarea").val();
+	var html='<li><div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av3.jpg"> </div> <div class="article-post"><span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span><p>'+content+' </p> </div></li>'
+	$("#lidiv").append(html);
+	});
+</script>
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 $this->load->view('footer');
 ?>
