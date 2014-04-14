@@ -47,6 +47,17 @@ class Login extends CI_Controller {
 	}
 	
     /**
+     * 用户退出
+     *
+     * @access public
+     * @return void
+     */
+    public function logout()
+    {
+        $this->auth->process_logout();
+    }
+	
+    /**
      * Password Callback
      *
      * @access public
