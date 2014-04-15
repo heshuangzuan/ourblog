@@ -6,13 +6,13 @@
                     <!--<li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> Admin <i class="icon-caret-down"></i>
+                            <i class="icon-user"></i> <?php //if($user_name) echo $user_name;else echo'Admin'; ?> Admin<i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#">我的账户</a></li>
                             <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>index.php/login">退出</a></li>
+                            <li><a tabindex="-1" href="<?php  echo base_url();?>index.php/login">退出</a></li>
                         </ul>
                     </li>
 

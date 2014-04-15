@@ -30,12 +30,10 @@ class article extends CI_Controller {
 		{
 			$this->_data['article_active'] = 'active';
 			$this->_data['page_title'] = '文章管理';
-			$this->_data['user_name'] = $user['name'];	//添加用户名	
-			$user = unserialize($this->session->userdata('user'));	
-			$this->_data['art_array'] = $this->Article_model->s_user_art($user['uid']);
+			$this->_data['user_name'] = $user['name'];	//添加用户名		
+			$this->_data['art_array'] = $this->Article_model->s_user_art($user['uid']); //查询结果数组加入一维数组
 			 // var_dump($this->_data);
 			 // exit();
-
 			$this->load->view('article',$this->_data);
 		}
 	}
@@ -79,9 +77,66 @@ class article extends CI_Controller {
 							 $this->load->view('insert_art',$this->_data);
 						 }
 		}
-				 
-	}
-	
+		}
+		//删除文章
+		public function dellete_art($art_id)
+		{
+			if($this->auth->has_login())
+			{
+				$success = $this->Article_model->d_art($art_id);
+				if($success)
+				{
+					
+					redirect('/article','location');
+				}
+				else
+				{
+					show_404();
+				}
+				
+			 }
+			
+			
+		}
+		//更新文章
+		public function update_artitlle($art_id)
+		{
+			if($this->auth->has_login())
+			{
+          		 		$this->_data['art_array'] = $this->Article_model->s_art_art($art_id);
+						$this->_data['page_title'] = '文章编辑';
+						$this->_data['article_write_active'] = 'active';
+							//	var_dump($this->_data );
+							// exit();
+						$this->load->view('article_update',$this->_data);
+			}
+			
+		}
+		//添加更新文章
+		public function add_update_article($pid)
+		{
+			if($this->auth->has_login())
+			{
+				 $user = unserialize($this->session->userdata('user'));
+		         		  $data = array(
+            	 		   'title' => $this->input->post('titlle'),
+  	 		  	   			'text' => $this->input->post('body'),
+							'allow_comment' => '1',
+							'status'=>'0',
+							'author_id' => $user['uid'],
+                            //'created'=>now(),
+							'modified'=>now(),
+							'deleted'=>'0'
+          			 		 );
+          		 		 $success = $this->Article_model->update_art($data,$pid);
+						 if($success)
+						 {
+							 $this->_data['page_title'] = '文章更新成功';
+							 $this->load->view('insert_art',$this->_data);
+						 }
+			}
+		}
+		
 }
 
 /* End of file welcome.php */

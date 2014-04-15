@@ -34,5 +34,37 @@ class Article_model extends CI_Model {
 		return  $data->result_array();
 		
 	}
+	//删除文章
+	public function d_art($art_id)
+	
+	{
+		$this->load->helper('security');
+		$qr ="DELETE FROM posts WHERE posts.pid = '".$art_id."' LIMIT 1";
+		$data = $this->db->query($qr);
+		//$data = mysql_affected_rows();
+		if($data)
+		{
+			return true;
+		}
+		else
+		return false;	
+	}
+	//获取文章id内容
+	public  function s_art_art($pid)
+	{
+	    $data = array();
+
+        $data = $this->db->get_where('posts', array('pid' => $pid));
+ 
+
+        return  $data->row_array();
+		}
+	//更新文章
+	public function update_art($data,$pid)
+	{
+		$this->load->helper('security');
+		return $this->db->update('posts', $data,array('pid' => $pid));
+	}
+	
 }
 ?>

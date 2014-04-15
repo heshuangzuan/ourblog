@@ -29,8 +29,8 @@ $this->load->view('header');
           <td><?php echo $art_item['text']?></td>
 		  <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
           <td>
-              <a href="article/write"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+              <a href="article/update_artitlle/<?php echo $art_item['pid']?>"><i class="icon-pencil"></i></a>
+              <a href="article/dellete_art/<?php echo $art_item['pid']?>" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
 	<?php endforeach ?>

@@ -1,33 +1,33 @@
-ï»¿<?php
+<?php
 
-// fileUplode ç½‘ç«™æ–‡ä»¶å¤¹åã€‚éœ€æ›´å…·ä½“å‚ç…§åšå®¢ç›®å½• line 19 20
-//$config ['site_url'] ="localhost/fileUplode" line 22ç½‘ç«™ç½‘å€éœ€æ›´æ”¹
+// fileUplode ÍøÕ¾ÎÄ¼ş¼ĞÃû¡£Ğè¸ü¾ßÌå²ÎÕÕ²©¿ÍÄ¿Â¼ line 19 20
+//$config ['site_url'] ="localhost/fileUplode" line 22ÍøÕ¾ÍøÖ·Ğè¸ü¸Ä
 //
 
-$errRequestFunction = "Error as a function call requests"; //é”™è¯¯çš„åŠŸèƒ½è°ƒç”¨è¯·æ±‚
-$errRequestFile = "Request the wrong file called"; //"é”™è¯¯çš„æ–‡ä»¶è°ƒç”¨è¯·æ±‚"
-$errFileType = "The wrong file type"; //"é”™è¯¯çš„æ–‡ä»¶ç±»å‹ï¼"
-$errUpfile = "File upload failed, please check the upload directory and directory read and write permissions set"; //"æ–‡ä»¶ä¸Šä¼ å¤±è´¥ï¼Œè¯·æ£€æŸ¥ä¸Šä¼ ç›®å½•è®¾ç½®å’Œç›®å½•è¯»å†™æƒé™"
-$uploadExceed = "The uploaded file can not exceed"; //"ä¸Šä¼ çš„æ–‡ä»¶ä¸èƒ½è¶…è¿‡"
+$errRequestFunction = "Error as a function call requests"; //´íÎóµÄ¹¦ÄÜµ÷ÓÃÇëÇó
+$errRequestFile = "Request the wrong file called"; //"´íÎóµÄÎÄ¼şµ÷ÓÃÇëÇó"
+$errFileType = "The wrong file type"; //"´íÎóµÄÎÄ¼şÀàĞÍ£¡"
+$errUpfile = "File upload failed, please check the upload directory and directory read and write permissions set"; //"ÎÄ¼şÉÏ´«Ê§°Ü£¬Çë¼ì²éÉÏ´«Ä¿Â¼ÉèÖÃºÍÄ¿Â¼¶ÁĞ´È¨ÏŞ"
+$uploadExceed = "The uploaded file can not exceed"; //"ÉÏ´«µÄÎÄ¼ş²»ÄÜ³¬¹ı"
 $config = array ();
-$config ['type'] = array ("flash", "img" ); //ä¸Šä¼ å…è®¸typeå€¼
-$config ['img'] = array ("jpg", "bmp", "gif" ); //imgå…è®¸åç¼€
-$config ['flash'] = array ("flv", "swf" ); //flashå…è®¸åç¼€
-$config ['flash_size'] = 2000; //ä¸Šä¼ flashå¤§å°ä¸Šé™ å•ä½ï¼šKB
-$config ['img_size'] = 5000; //ä¸Šä¼ imgå¤§å°ä¸Šé™ å•ä½ï¼šKB
-$config ['message'] = "Sucessed!"; //ä¸Šä¼ æˆåŠŸåæ˜¾ç¤ºçš„æ¶ˆæ¯ï¼Œè‹¥ä¸ºç©ºåˆ™ä¸æ˜¾ç¤º ä¸Šä¼ æˆåŠŸ
-$config ['name'] = mktime (); //ä¸Šä¼ åçš„æ–‡ä»¶å‘½åè§„åˆ™ è¿™é‡Œä»¥unixæ—¶é—´æˆ³æ¥å‘½å
-$config ['flash_dir'] = $_SERVER['DOCUMENT_ROOT']."/github/OurBlog/upload"; //ä¸Šä¼ flashæ–‡ä»¶åœ°å€ é‡‡ç”¨ç»å¯¹åœ°å€ æ–¹ä¾¿upload.phpæ–‡ä»¶æ”¾åœ¨ç«™å†…çš„ä»»ä½•ä½ç½® åé¢ä¸åŠ "/",ä¸Šä¼ çš„æ–‡ä»¶å°†æ”¾åœ¨ç½‘ç«™æ ¹ç›®å½•ä¸‹çš„uploadæ–‡ä»¶å¤¹ä¸‹  fileUplode ç½‘ç«™æ–‡ä»¶å¤¹åã€‚éœ€æ›´æ”¹
-$config ['img_dir'] = $_SERVER['DOCUMENT_ROOT']."/github/OurBlog/upload"; //ä¸Šä¼ imgæ–‡ä»¶åœ°å€ é‡‡ç”¨ç»å¯¹åœ°å€ é‡‡ç”¨ç»å¯¹åœ°å€ æ–¹ä¾¿upload.phpæ–‡ä»¶æ”¾åœ¨ç«™å†…çš„ä»»ä½•ä½ç½® åé¢ä¸åŠ "/"ï¼Œä¸Šä¼ çš„æ–‡ä»¶å°†æ”¾åœ¨ç½‘ç«™æ ¹ç›®å½•ä¸‹çš„uploadæ–‡ä»¶å¤¹ä¸‹
-$config ['site_url'] = "http://localhost/github/OurBlog"; //ç½‘ç«™çš„ç½‘å€ è¿™ä¸å›¾ç‰‡ä¸Šä¼ åçš„åœ°å€æœ‰å…³ æœ€åä¸åŠ "/" å¯ç•™ç©º
-//æ²¡æœ‰æ–‡ä»¶å¤¹æ—¶åˆ™åˆ›å»º
+$config ['type'] = array ("flash", "img" ); //ÉÏ´«ÔÊĞítypeÖµ
+$config ['img'] = array ("jpg", "bmp", "gif" ); //imgÔÊĞíºó×º
+$config ['flash'] = array ("flv", "swf" ); //flashÔÊĞíºó×º
+$config ['flash_size'] = 2000; //ÉÏ´«flash´óĞ¡ÉÏÏŞ µ¥Î»£ºKB
+$config ['img_size'] = 5000; //ÉÏ´«img´óĞ¡ÉÏÏŞ µ¥Î»£ºKB
+$config ['message'] = "ÎÄ¼şÉÏ´«³É¹¦!"; //ÉÏ´«³É¹¦ºóÏÔÊ¾µÄÏûÏ¢£¬ÈôÎª¿ÕÔò²»ÏÔÊ¾ ÉÏ´«³É¹¦
+$config ['name'] = mktime (); //ÉÏ´«ºóµÄÎÄ¼şÃüÃû¹æÔò ÕâÀïÒÔunixÊ±¼ä´ÁÀ´ÃüÃû
+$config ['flash_dir'] = $_SERVER['DOCUMENT_ROOT']."/github/OurBlog/upload"; //ÉÏ´«flashÎÄ¼şµØÖ· ²ÉÓÃ¾ø¶ÔµØÖ· ·½±ãupload.phpÎÄ¼ş·ÅÔÚÕ¾ÄÚµÄÈÎºÎÎ»ÖÃ ºóÃæ²»¼Ó"/",ÉÏ´«µÄÎÄ¼ş½«·ÅÔÚÍøÕ¾¸ùÄ¿Â¼ÏÂµÄuploadÎÄ¼ş¼ĞÏÂ  fileUplode ÍøÕ¾ÎÄ¼ş¼ĞÃû¡£Ğè¸ü¸Ä
+$config ['img_dir'] = $_SERVER['DOCUMENT_ROOT']."/github/OurBlog/upload"; //ÉÏ´«imgÎÄ¼şµØÖ· ²ÉÓÃ¾ø¶ÔµØÖ· ²ÉÓÃ¾ø¶ÔµØÖ· ·½±ãupload.phpÎÄ¼ş·ÅÔÚÕ¾ÄÚµÄÈÎºÎÎ»ÖÃ ºóÃæ²»¼Ó"/"£¬ÉÏ´«µÄÎÄ¼ş½«·ÅÔÚÍøÕ¾¸ùÄ¿Â¼ÏÂµÄuploadÎÄ¼ş¼ĞÏÂ
+$config ['site_url'] = "http://localhost/github/OurBlog"; //ÍøÕ¾µÄÍøÖ· ÕâÓëÍ¼Æ¬ÉÏ´«ºóµÄµØÖ·ÓĞ¹Ø ×îºó²»¼Ó"/" ¿ÉÁô¿Õ
+//Ã»ÓĞÎÄ¼ş¼ĞÊ±Ôò´´½¨
 isDirAll($config ['flash_dir']);
 isDirAll($config ['img_dir']);
-//æ–‡ä»¶ä¸Šä¼ 
+//ÎÄ¼şÉÏ´«
 uploadfile ();
 function uploadfile() {
     global $config;
-    //åˆ¤æ–­æ˜¯å¦æ˜¯éæ³•è°ƒç”¨
+    //ÅĞ¶ÏÊÇ·ñÊÇ·Ç·¨µ÷ÓÃ
     if (empty ( $_GET ['CKEditorFuncNum'] ))
         mkhtml ( 1, "", $errRequestFunction );
     $fn = $_GET ['CKEditorFuncNum'];
@@ -35,17 +35,17 @@ function uploadfile() {
         mkhtml ( 1, "", $errRequestFile );
     $type = $_GET ['type'];
     if (is_uploaded_file ( $_FILES ['upload'] ['tmp_name'] )) {
-        //åˆ¤æ–­ä¸Šä¼ æ–‡ä»¶æ˜¯å¦å…è®¸
+        //ÅĞ¶ÏÉÏ´«ÎÄ¼şÊÇ·ñÔÊĞí
         $filearr = pathinfo ( $_FILES ['upload'] ['name'] );
         $filetype = $filearr ["extension"];
         if (! in_array ( $filetype, $config [$type] ))
             mkhtml ( $fn, "", $errFileType );
-            //åˆ¤æ–­æ–‡ä»¶å¤§å°æ˜¯å¦ç¬¦åˆè¦æ±‚
+            //ÅĞ¶ÏÎÄ¼ş´óĞ¡ÊÇ·ñ·ûºÏÒªÇó
         if ($_FILES ['upload'] ['size'] > $config [$type . "_size"] * 1024)
-            mkhtml ( $fn, "", $uploadExceed . $config [$type . "_size"] . "KBï¼" );
+            mkhtml ( $fn, "", $uploadExceed . $config [$type . "_size"] . "KB£¡" );
         $file_abso = $config [$type . "_dir"] . "/" . $config ['name'] . "." . $filetype;
         $file_host = $file_abso;
-        $file_path = "/upload/" . $config ['name'] . "." . $filetype;//è¿™é‡Œçš„/upload/æ ¹æ®ä½ ä¸Šä¼ æ–‡ä»¶çš„ç›®å½•è¿›è¡Œè°ƒæ•´
+        $file_path = "/upload/" . $config ['name'] . "." . $filetype;//ÕâÀïµÄ/upload/¸ù¾İÄãÉÏ´«ÎÄ¼şµÄÄ¿Â¼½øĞĞµ÷Õû
         if (move_uploaded_file ( $_FILES ['upload'] ['tmp_name'], $file_host )) {
             mkhtml ( $fn, $config ['site_url'] . $file_path,iconv('utf-8','gb2312',$config ['message'] ));
         } else {
@@ -53,7 +53,7 @@ function uploadfile() {
         }
     }
 }
-//è¾“å‡ºjsè°ƒç”¨
+//Êä³öjsµ÷ÓÃ
 function mkhtml($fn, $fileurl, $message) {
     
 	$str='<script type="text/javascript" charset="utf-8">window.parent.CKEDITOR.tools.callFunction('.$fn.', \''.$fileurl.'\', \''.$message.'\');</script>';
