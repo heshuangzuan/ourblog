@@ -55,7 +55,6 @@ class Article_model extends CI_Model {
 	    $data = array();
 
         $data = $this->db->get_where('posts', array('pid' => $pid));
- 
 
         return  $data->row_array();
 		}

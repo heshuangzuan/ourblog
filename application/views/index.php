@@ -81,7 +81,7 @@ $this->load->view('index_header');
           <td><?php echo $art_item['title']?></td>
           <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
           <td><?php echo $art_item['text']?></td>
-		  <td><a href="index.php/article/show" target="_blank">&nbsp;查看</a></td>
+		  <td><a href="index.php/article/show/<?php echo $art_item['pid']?>" target="_blank">&nbsp;查看</a></td>
 		 <script>i++;</script>
 
         </tr>

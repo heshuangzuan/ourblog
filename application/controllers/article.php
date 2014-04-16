@@ -16,7 +16,8 @@ class article extends CI_Controller {
 	$this->_data['page_changepwd_active'] = '';//修改密码
 	$this->load->library('Auth');
 	$this->load->library('form_validation');
-	 $this->load->model('Article_model');
+	$this->load->model('Article_model');
+	$this->load->model('User_model');
     }
 	public function index()
 	{
@@ -46,12 +47,17 @@ class article extends CI_Controller {
 			$this->load->view('write_post',$this->_data);
 
 	}
-	public function show()
+	public function show($art_id)
 	{
 		//var_dump($art_id);
 		// exit();
 		/** set title ，博客文章全文显示*/
+		
 		$this->_data['page_title'] = '我的博客-标题';
+		$this->_data['art_array'] = $this->Article_model->s_art_art($art_id);
+		$this->_data['user_array'] = $this->User_model->get_user_by_id(($this->_data['art_array']['author_id']));
+		 
+		 
 		$this->load->view('show_article',$this->_data);
 	}
 	//文章添加  中文post乱码未解决
