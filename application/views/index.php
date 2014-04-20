@@ -1,26 +1,29 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 $this->load->view('index_header');
 ?>
-
-<div class="row-fluid">
+<div class="page">
+      <div class="page-container">
+    <div class="container" style="background:aliceblue">
+  <div class="row">
+  <div class="span12"> 
   <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong>欢迎光临!</strong> 希望大家踊跃评论!
     </div>
-        <div class="block">
-        <a href="#page-stats" class="block-heading" data-toggle="collapse">博客技术点</a>
-        <div id="page-stats" class="block-body collapse in">
+      
+    
 
-            <div class="stat-widget-container" style="background-color:#4d5b76;">
+
 <div class="container" style="width:940px;">
   <div id="carousel1" class="carousel slide">
-  	<div class="carousel-inner">
-      <div class="item active">
-      <img src="<?php echo base_url();?>assets/img/3.jpg" alt="">
-      <div class="carousel-caption">
-      <h4>速度第一</h4>          
-      <p>采用最流行的php语言+MYSQL数据库+jquery，体现出强大的运行速度。</p>
+  <div class="carousel-inner">
+  <div class="item active">
+      <div align="left"><img src="<?php echo base_url();?>assets/img/3.jpg" alt="">
       </div>
+      <div class="carousel-caption">
+        <h4>速度第一</h4>          
+      <p>采用最流行的php语言+MYSQL数据库+jquery，体现出强大的运行速度。</p>
+    </div>
       </div>
 	  
       <div class="item">
@@ -47,17 +50,20 @@ $this->load->view('index_header');
       </div>
       </div>
 
-    </div>
-    <a  href="#carousel1" data-slide="prev" class="left carousel-control"><i style="padding-top:12px;" class="icon-chevron-left"></i></a>
-    <a  href="#carousel1" data-slide="next" class="right carousel-control"><div><i style="padding-top:12px;"  class="icon-chevron-right"></i></div></a>
+  </div>
+    <a  href="#carousel1" data-slide="prev" class="left carousel-control"><i style="padding-top:16px;" class="icon-chevron-left"></i></a>
+    <a  href="#carousel1" data-slide="next" class="right carousel-control"><div><i style="padding-top:16px;"  class="icon-chevron-right"></i></div></a>
    </div>
 
   
-</div>
-            </div>
-        </div>
+
+         
+    
     </div>
 </div>
+	</div>
+</div>
+</div></div>
     <!-- 此处可按照时间排序显示最新的博客文章-->
 <script>var i=0;</script>
 <div class="row-fluid">
@@ -80,6 +86,7 @@ $this->load->view('index_header');
          
           <td><?php echo $art_item['title']?></td>
           <td><?php echo date ("Y-m-d H:i",$art_item['created'])?></td>
+           <!--显示下面的简介时候，只显示前10个文字，后面的省略号！ -->
           <td><?php echo $art_item['text']?></td>
 		  <td><a href="index.php/article/show/<?php echo $art_item['pid']?>" target="_blank">&nbsp;查看</a></td>
 		 <script>i++;</script>
@@ -88,7 +95,7 @@ $this->load->view('index_header');
 	<?php endforeach ?>
               </tbody>
             </table>
-            <p><a href="index.php/article/show">More...</a></p>
+            <p><a href="<?php echo base_url();?>/index.php/article/show_allarticle">更多...</a></p>
         </div>
     </div>
     <div class="block span6">

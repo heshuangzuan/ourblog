@@ -52,13 +52,20 @@ class article extends CI_Controller {
 		//var_dump($art_id);
 		// exit();
 		/** set title ，博客文章全文显示*/
-		
-		$this->_data['page_title'] = '我的博客-标题';
+		$this->_data['page_active_article'] = 'active';
+		$this->_data['page_active_index'] = '';
+		$this->_data['page_title'] = '我的博客-[title]';//此处加上文章标题
 		$this->_data['art_array'] = $this->Article_model->s_art_art($art_id);
 		$this->_data['user_array'] = $this->User_model->get_user_by_id(($this->_data['art_array']['author_id']));
 		 
 		 
 		$this->load->view('show_article',$this->_data);
+	}
+	public function show_allarticle(){
+		$this->_data['page_title'] = '我的所有博客';
+		$this->_data['page_active_article'] = 'active';
+		$this->_data['page_active_index'] = '';
+		$this->load->view('show_allarticle',$this->_data);
 	}
 	//文章添加  中文post乱码未解决
 	public function insert_art()

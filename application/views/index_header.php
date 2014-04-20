@@ -7,75 +7,36 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css" />  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/styles.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/font-awesome.css" />  
         <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-responsive.min.css" /> 
         <script src="<?php echo base_url();?>assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/js/bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js" type="text/javascript"></script>
-    <style type="text/css">
-        #line-chart {
-            height:300px;
-            width:800px;
-            margin: 0px auto;
-            margin-top: 1em;
-        }
-        .brand { font-family: georgia, serif; }
-        .brand .first {
-            color: #ccc;
-            font-style: italic;
-        }
-        .brand .second {
-            color: #fff;
-            font-weight: bold;
-        }
-		.ahover:hover{
-			background-color:#444;
-			color:#FFF;
-			}
-.news_ts_tit{  line-height:40px; font-size:24px; color:#000;}
-.ccontent{ font-size:14px;  color:#000; line-height:25px; letter-spacing:1px; overflow:hidden;font-family:"微软雅黑";}
-.left-inner-addon { position: relative; }
-.left-inner-addon input, .left-inner-addon textarea { padding-left: 30px; }
-.left-inner-addon span { position: absolute; padding: 10px 12px; pointer-events: none; }
 
-.float_r { float: right }
-
-    </style>
-     <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.ico">
-    <script type="text/javascript">
-
-    </script>
-</head>
-    <div class="navbar">
-        <div class="navbar-inner">
-        
-                <ul class="nav pull-right">
-                <li>
- <!-- 搜索讨论下，做还是不做
-                            <form class="search form-inline" style="margin: 5px 20px 0px 0px;">
-            <input type="text" placeholder="请出入搜索内容">
-        				</form>
-        </li>
-                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">搜索</a></li>
--->
-                    <li id="fat-menu" class="dropdown">
-                    <!-- 如果登陆显示用户名，没登陆显示游客，游客ul用下面那个 -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> UserName <i class="icon-caret-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#">我的账户</a></li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>index.php/login">退出</a></li>
-                        </ul>
-                        <ul class="dropdown-menu" style="display:none">
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" href="<?php echo base_url();?>index.php/login">登陆</a></li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-                <a class="brand" href="index.html"><span class="second">我的博客</span></a>
+     <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.ico"> 
+    <div id="in-nav">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <ul class="pull-right">
+            	<li><i class="icon-user"></i><a href="#">用户名</a></li>
+              <li><a href="<?php echo base_url();?>/index.php/login">退出</a></li>
+            </ul><a id="logo" href="<?php echo base_url();?>index.php">
+              <h4>我的<strong>博客</strong></h4></a>
+          </div>
         </div>
+      </div>
     </div>
+    <div id="in-sub-nav">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <ul>
+              <li><a href="<?php echo base_url();?>/index.php"  class="<?php echo $page_active_index ?>"><i class="batch home"></i><br>主页</a></li>
+              <li><a href="<?php echo base_url();?>/index.php/article/show_allarticle" class="<?php echo $page_active_article ?>"><i class="batch forms"></i><br>博客文章</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</div>
