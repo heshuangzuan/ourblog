@@ -64,6 +64,20 @@ class Article_model extends CI_Model {
 		$this->load->helper('security');
 		return $this->db->update('posts', $data,array('pid' => $pid));
 	}
+	//添加评论
+	public function add_comments($data)
+	{
+		 $this->load->helper('security');
+		 return $this->db->insert('comments', $data);
+		
+		}
+	//展示评论
+	public function show_comments($art_id)
+	{
+		$this->load->helper('security');
+		$data = $this->db->get_where('comments', array('pid' => $art_id));
+		return  $data->result_array();
+	}
 	
 }
 ?>

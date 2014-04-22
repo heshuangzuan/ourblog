@@ -47,6 +47,7 @@ class article extends CI_Controller {
 			$this->load->view('write_post',$this->_data);
 
 	}
+	//文章展示
 	public function show($art_id)
 	{
 		//var_dump($art_id);
@@ -56,9 +57,17 @@ class article extends CI_Controller {
 		$this->_data['page_title'] = '我的博客-标题';
 		$this->_data['art_array'] = $this->Article_model->s_art_art($art_id);
 		$this->_data['user_array'] = $this->User_model->get_user_by_id(($this->_data['art_array']['author_id']));
-		 
-		 
-		$this->load->view('show_article',$this->_data);
+		if($this->auth->has_login())
+		{ 
+			$this->_data['user_login']= true; //传入用户是否登录消息。以便加载评论
+			$this->load->view('show_article',$this->_data);
+		}
+		else
+		{
+			$this->_data['user_login']= false;
+			$this->load->view('show_article',$this->_data);
+			
+			}
 	}
 	//文章添加  中文post乱码未解决
 	public function insert_art()
@@ -141,6 +150,55 @@ class article extends CI_Controller {
 							 $this->load->view('insert_art',$this->_data);
 						 }
 			}
+		}
+		//根据文章ID添加评论
+		public function add_coments($art_id)
+		{
+			$data = array();
+			if($this->auth->has_login())
+			{
+				//用户已登录则。获取登录用户的id
+				$user = unserialize($this->session->userdata('user'));
+
+				$data = array
+					(
+						'text' => $this->input->post('body'),//评论内容
+						'author_id'=>$this->User_model->get_user_by_id(($this->_data['art_array']['author_id'])), //作者ID
+						'owner_id' =>$user['uid'], //评论ID
+						'pid'=> $art_id,
+						'status'=> '1',
+						'created'=> now(),
+					);
+					
+			}
+			else
+			{ 
+			//未登录，则获取用户的邮箱，ip地址，
+				$data = array(
+				'email' =>$this->input->post('body'),
+				'text' => $this->input->post('body'),//评论内容
+				'ip' => $_SERVER["REMOTE_ADDR"],
+				'pid'=> $art_id,
+				'status'=> '1',
+				'created'=> now(),
+				
+				);
+				
+						
+			}
+			$success = $this->Article_model->add_comments($data);
+			
+			if($success)
+			{
+				redirect('article/show/'.$art_id,'location');
+			}
+			else
+			{
+				redirect('article/show/'.$art_id,'location');
+			}
+			
+
+			
 		}
 		
 }

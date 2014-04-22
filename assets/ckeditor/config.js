@@ -37,8 +37,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 	
 	//文件上传upload.php文件位置需要自行更改
-config.filebrowserImageUploadUrl = 'http://localhost/github/OurBlog/assets/ckeditor/upload.php?type=img';
-config.filebrowserFlashUploadUrl = 'http://localhost/github/OurBlog/assets/ckeditor/upload.php?type=flash';
+config.filebrowserImageUploadUrl = 'http://ourblog.sn/assets/ckeditor/upload.php?type=img';
+config.filebrowserFlashUploadUrl = 'http://ourblog.sn/assets/ckeditor/upload.php?type=flash';
 
 };
 
