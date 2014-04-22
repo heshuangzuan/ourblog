@@ -28,15 +28,31 @@ $this->load->view('index_header');
             <h5>用户评论</h5>
         </div>
         <div class="widget-content nopadding"> 
+
 <ul class="recent-posts">
+<!--展示用户评论-->
+<?php foreach ($comments_array as $comments): ?>
+
+	 <?php if($comments['owner_name']){ ?>
               <li>
                 <div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av1.jpg"> </div>
                 <div class="article-post">
                   
-                  <span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                  <p class="neirong">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment. </p>
+                  <span class="user-info"> NAME: <?php echo $comments['owner_name']?> / Date: <?php echo date ("Y-m-d H:i",$comments['created'])?> </span>
+                  <p class="neirong"><?php echo $comments['text']?></p>
                 </div>
               </li>
+	  <?php } else { ?>
+              <li>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av1.jpg"> </div>
+                <div class="article-post">
+                  
+                  <span class="user-info"> IP: <?php echo $comments['ip']?> / Date: <?php echo date ("Y-m-d H:i",$comments['created'])?> </span>
+                  <p class="neirong"><?php echo $comments['text']?></p>
+                </div>
+              </li>
+		<?php }?>	  
+<?php endforeach ?>
 
               <div id="lidiv"> </div>
               <!--
@@ -51,9 +67,11 @@ $this->load->view('index_header');
     <div class="col-md-7">
 		<div class="form-group" style="text-align:center">
 			<span class="glyphicon glyphicon-comment"></span>
-			<textarea name="message" rows="6" class="form-control" style="width:100%" id="input_message" placeholder="Message..."></textarea><br>
+			<form action="/index.php/article/add_coments/<?php echo $art_array['pid'];?>" method="post">
+			<textarea id="message" name="message" rows="6" class="form-control" style="width:100%" id="input_message" placeholder="Message..."></textarea><br>
 			<button type="submit" id="pinglun" class="btn btn-primary" style="margin:0px 0px 0px 100px; float:left">评论</button>
 			<button type="reset" id="resetmessage" class="btn btn-default" style="margin:0px 0px 0px 100px; float:left">清除</button>
+			</form>
 		</div>
 	</div>
     </div>
@@ -64,44 +82,7 @@ $this->load->view('index_header');
 	background:antiquewhite;
 	}
 </style>
-<script>
-$("#resetmessage").click(function(){
-	$("textarea").val("");
-	});
-	var i=0;
-$("#pinglun").click(function(){
-	var content=$("textarea").val();
-	var username="john Deo";
-	var myDate = new Date();
-	var date=myDate.getFullYear()+"-"+myDate.getMonth()+"-"+myDate.getDate(); 
-	var time=myDate.getHours()+":"+myDate.getMinutes()+":"+myDate.getSeconds();
-	if(content)
-	{
-		i++;
-		//删除return上面的，利用post成功后添加评论
-						var html='<li id="li'+i+'"><div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av3.jpg"> </div> <div class="article-post"><span class="user-info"> username: '+username+' / 日期:'+date+'  / 时间:'+time+' </span><p class="neirong">'+content+' </p> </div></li>'
-				$("#lidiv").append(html);
-				$("textarea").val("");//评论成功后清除textarea
-				$("#li"+i).hide();
-				$("#li"+i).show("slow");
-				return ;
-				var id="1";
-		//发送post请求
-		$.post(
-			"",//请求地址
-			{"id":id,"content":content},//请求参数
-			function(data){
-				//评论成功！
-				var html='<li><div class="user-thumb"> <img width="40" height="40" alt="User" src="<?php echo base_url();?>assets/img/demo/av3.jpg"> </div> <div class="article-post"><span class="user-info"> username: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span><p>'+content+' </p> </div></li>'
-				$("#lidiv").append(html);
-		});
-	}
-	else
-	{
-		alert("请输入评论内容！");
-		}
-	});
-</script>
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 $this->load->view('footer');
 ?>

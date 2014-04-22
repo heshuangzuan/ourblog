@@ -29,6 +29,28 @@ class User_model extends CI_Model {
 
         return $data;
     }
+	    /**
+     * 通过 ID 获取单个用户名
+     *
+     * @param $uid
+     * @return Array 用户名
+     */
+	    public function get_username_by_id($uid)
+    {
+        $data = array();
+
+        $this->db->select('name')
+             	 ->from('users')
+             	 ->where('uid', $uid);
+        $query = $this->db->get();
+        if (1 === $query->num_rows())
+        {
+            $data = $query->row_array();
+        }
+        $query->free_result();
+
+        return $data;
+    }
     
     /**
      * 添加一个用户

@@ -57,6 +57,7 @@ class article extends CI_Controller {
 		$this->_data['page_active_index'] = '';
 		$this->_data['page_title'] = '我的博客-[title]';//此处加上文章标题
 		$this->_data['art_array'] = $this->Article_model->s_art_art($art_id);
+		$this->_data['comments_array'] = $this->Article_model->show_comments($art_id);//加载用户评论
 		$this->_data['user_array'] = $this->User_model->get_user_by_id(($this->_data['art_array']['author_id']));
 		if($this->auth->has_login())
 		{ 
@@ -71,10 +72,18 @@ class article extends CI_Controller {
 			}
 	}
 	public function show_allarticle(){
+		if($this->auth->has_login())
+		{
 		$this->_data['page_title'] = '我的所有博客';
 		$this->_data['page_active_article'] = 'active';
 		$this->_data['page_active_index'] = '';
 		$this->load->view('show_allarticle',$this->_data);
+		}
+		else
+		{
+			//alert('请先登录');
+			redirect('','location');
+		}
 	}
 	//文章添加  中文post乱码未解决
 	public function insert_art()
@@ -169,9 +178,10 @@ class article extends CI_Controller {
 
 				$data = array
 					(
-						'text' => $this->input->post('body'),//评论内容
-						'author_id'=>$this->User_model->get_user_by_id(($this->_data['art_array']['author_id'])), //作者ID
+						'text' => $this->input->post('message'),//评论内容
+					//	'author_id'=>$this->Article_model->get_author_id($art_id), //作者ID
 						'owner_id' =>$user['uid'], //评论ID
+						'owner_name'=>$user['name'],
 						'pid'=> $art_id,
 						'status'=> '1',
 						'created'=> now(),
@@ -182,8 +192,8 @@ class article extends CI_Controller {
 			{ 
 			//未登录，则获取用户的邮箱，ip地址，
 				$data = array(
-				'email' =>$this->input->post('body'),
-				'text' => $this->input->post('body'),//评论内容
+				//'email' =>$this->input->post('body'),
+				'text' => $this->input->post('message'),//评论内容
 				'ip' => $_SERVER["REMOTE_ADDR"],
 				'pid'=> $art_id,
 				'status'=> '1',

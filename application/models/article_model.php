@@ -78,6 +78,13 @@ class Article_model extends CI_Model {
 		$data = $this->db->get_where('comments', array('pid' => $art_id));
 		return  $data->result_array();
 	}
+	//获取作者ID
+	public function get_author_id($pid)
+	{
+		$this->load->helper('security');
+		$data = $this->db->query('SELECT author_id FROM posts where pid='.$pid);
+		return  $data->row_array();
+		}
 	
 }
 ?>

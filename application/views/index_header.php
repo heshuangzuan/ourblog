@@ -21,7 +21,7 @@
           <div class="span12">
             <ul class="pull-right">
             	<li><i class="icon-user"></i><a href="#">用户名</a></li>
-              <li><a href="<?php echo base_url();?>/index.php/login">退出</a></li>
+              <li><a href="<?php echo base_url();?>index.php/login">退出</a></li>
             </ul><a id="logo" href="<?php echo base_url();?>index.php">
               <h4>我的<strong>博客</strong></h4></a>
           </div>
@@ -33,8 +33,8 @@
         <div class="row">
           <div class="span12">
             <ul>
-              <li><a href="<?php echo base_url();?>/index.php"  class="<?php echo $page_active_index ?>"><i class="batch home"></i><br>主页</a></li>
-              <li><a href="<?php echo base_url();?>/index.php/article/show_allarticle" class="<?php echo $page_active_article ?>"><i class="batch forms"></i><br>博客文章</a></li>
+              <li><a href="<?php echo base_url();?>index.php"  class="<?php echo $page_active_index ?>"><i class="batch home"></i><br>主页</a></li>
+              <li><a href="<?php echo base_url();?>index.php/article/show_allarticle" class="<?php echo $page_active_article ?>"><i class="batch forms"></i><br>博客文章</a></li>
             </ul>
           </div>
         </div>
