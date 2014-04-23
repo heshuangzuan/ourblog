@@ -67,7 +67,7 @@ $this->load->view('index_header');
     <div class="col-md-7">
 		<div class="form-group" style="text-align:center">
 			<span class="glyphicon glyphicon-comment"></span>
-			<form action="/index.php/article/add_coments/<?php echo $art_array['pid'];?>" method="post">
+			<form action="/index.php/article/add_coments/<?php echo $art_array['pid'];?>" method="post" accept-charset="ISO-8859-1">
 			<textarea id="message" name="message" rows="6" class="form-control" style="width:100%" id="input_message" placeholder="Message..."></textarea><br>
 			<button type="submit" id="pinglun" class="btn btn-primary" style="margin:0px 0px 0px 100px; float:left">ÆÀÂÛ</button>
 			<button type="reset" id="resetmessage" class="btn btn-default" style="margin:0px 0px 0px 100px; float:left">Çå³ı</button>

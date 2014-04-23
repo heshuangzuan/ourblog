@@ -8,7 +8,7 @@ $this->load->view('header');
             <h1 class="page-title">写文章</h1>
         </div>
             <div class="block-body" >
-                <form method="post"  action="insert_art">
+                <form method="post"  action="insert_art" accept-charset="ISO-8859-1">
                             <label>标题</label>
         <input name="titlle" type="text" class="input-xlarge">
                                     
@@ -16,7 +16,7 @@ $this->load->view('header');
 	<textarea id="editor" name="body" placeholder="请输入新闻正文" rows="10"><s:property value="news.body"/></textarea>
 	<br>
   	<div class="btn-group">
-    		<button  type="submit" onclick="urlcode" class="btn btn-primary"><i class="icon-save"></i> 保存</button>
+    		<button  type="submit" onclick="urlcode" class="btn btn-primary" ><i class="icon-save"></i> 保存</button>
   	</div>
                 </form>
             </div>
