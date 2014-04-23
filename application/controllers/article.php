@@ -71,19 +71,32 @@ class article extends CI_Controller {
 			
 			}
 	}
-	public function show_allarticle(){
-		if($this->auth->has_login())
-		{
+	public function show_allarticle($pg,$mb){
+		
+	$this->load->library('pagination');
+
+		$config['base_url'] = 'http://ourblog.sn/index.php/article/show_allarticle/page/';
+		$config['total_rows'] = 200;//分页条数
+		$config['per_page'] = 5;
+		$config['uri_segment'] = '4';//设为页面的参数，如果不添加这个参数分页用不了
+		$config['first_link'] = '[首页]'; // 第一页显示   
+		$config['last_link'] = '[末页]'; // 最后一页显示   
+		$config['next_link'] = '[下一页] '; // 下一页显示   
+		$config['prev_link'] = ' [上一页]'; // 上一页显示   
+		$config['num_links'] = 2;
+		$config['first_url'] = 'http://ourblog.sn/index.php/article/show_allarticle/page/0';
+		$this->pagination->initialize($config);
+
+
+		//var_dump($pg.$mb);
+		$this->_data['list_art'] = $this->Article_model->s_list_art($mb);
+		
+		
 		$this->_data['page_title'] = '我的所有博客';
 		$this->_data['page_active_article'] = 'active';
 		$this->_data['page_active_index'] = '';
 		$this->load->view('show_allarticle',$this->_data);
-		}
-		else
-		{
-			//alert('请先登录');
-			redirect('','location');
-		}
+
 	}
 	//文章添加  中文post乱码未解决
 	public function insert_art()

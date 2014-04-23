@@ -34,6 +34,16 @@ class Article_model extends CI_Model {
 		return  $data->result_array();
 		
 	}
+	
+		//获取所有文章按照日期就行排序
+	public function s_list_art($number)
+	{
+		$prenumber = $number + 5;
+		$data = array();
+		$data = $this->db->query('SELECT * FROM posts ORDER BY pid DESC LIMIT '.$number.' ,'.$prenumber);
+		return  $data->result_array();
+		
+	}
 	//删除文章
 	public function d_art($art_id)
 	
