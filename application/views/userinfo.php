@@ -14,12 +14,13 @@ $this->load->view('header');
 <div class="well">
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
-    <form id="tab">
-        <label>用户名</label>
-        <input type="text" value="jsmith" class="input-xlarge">
+    <form id="tab" method='post'>
+        <label>用户名（这个是不准改的，室长修改下）</label>
+        <input type="text" value="<?php echo $username; ?>" class="input-xlarge">
         <label>邮箱</label>
-        <input type="text" value="jsmith@yourcompany.com" class="input-xlarge">
+        <input name='email' type="text" value="<?php echo $email; ?>" class="input-xlarge">
 <br><br>
+<p><?php echo validation_errors(); ?></p>
   <div class="btn-group">
     <button  class="btn btn-primary"><i class="icon-save"></i> 保存</button>
   </div>
