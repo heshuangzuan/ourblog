@@ -27,13 +27,13 @@
         </form>
         -->
 <?php if($article_active!=""||$article_write_active!=""){?>
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>文章管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li class="<?php echo $article_active?>"><a href="<?php echo base_url();?>index.php/article">文章管理</a></li>
             <li class="<?php echo $article_write_active?>"><a href="<?php echo base_url();?>index.php/article/write">写文章</a></li>
         </ul>
 <?php }else{ ?>
-        <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-dashboard"></i>后台管理</a>
+        <a href="#dashboard-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-dashboard"></i>文章管理</a>
         <ul id="dashboard-menu" class="nav nav-list collapse">
             <li class="<?php echo $article_active?>"><a href="<?php echo base_url();?>index.php/article">文章管理</a></li>
             <li class="<?php echo $article_write_active?>"><a href="<?php echo base_url();?>index.php/article/write">写文章</a></li>
